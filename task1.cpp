@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "./func/print-info.h"
+#include "./func/input-height-data.h"
 #include "./func/calc-pres.h"
 
 using namespace std;
@@ -10,13 +11,7 @@ int main() {
 
     printInfo("силу давления в воде на глубине H метров");
     
-    // Ввод исходных данных с указанием единиц измерения
-    cout << "\nВведите глубину H (в метрах): ";
-    if (!(cin >> H) || H < 0) {
-        cout << "Ошибка: глубина должна быть положительным числом!" << endl;
-
-        return 1;
-    }
+    inputHeightData(H);
 
     // Вызов функции, выполняющей вычисления
     double P = calculatePressure(H);
